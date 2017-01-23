@@ -1,31 +1,52 @@
-
 # -*- coding: utf-8 -*-
+from sys import argv
 from datetime import datetime, date, time
+from langs import langs, base_langs 
 
+
+# sys.argv
+script, option = argv
+
+# datetime 
 now = date.today()
 week_day = now.strftime("%w")
+#-----------------------------
 
-lingvoj = ['Dana, ', 'Franca, ', 'Japana, ', 'Sveda!', 'Germana!', 'Norvega!', 'Turka!', 'Itala!']
+# Languages to be studied (from langs.py)
+monday = base_langs + langs[3]
+tuesday = base_langs + langs[4]
+wednesday = base_langs + langs[5]
+thursday = base_langs + langs[6]
+friday = base_langs + langs[7]
+saturday = base_langs
+sunday = base_langs
 
-baseling = lingvoj[0] + lingvoj[1] + lingvoj[2]
-apudling = lingvoj[3] + lingvoj[4] + lingvoj[5] + lingvoj[6] + lingvoj[7]
+def study_today(week_day):
+    print "You should study:"
+    if week_day == "1":
+        print monday
+    elif week_day == "2":
+        print tuesday
+    elif week_day == "3":
+        print wednesday
+    elif week_day == "4":
+        print thursday
+    elif week_day == "5":
+        print friday
+    elif week_day == "6":
+        print saturday
+    elif week_day == "0":
+        print sunday
 
-lundo = baseling + lingvoj[3]
-mardo = baseling + lingvoj[4]
-merkredo = baseling + lingvoj[5]
-jauxdo = baseling + lingvoj[6]
-vendredo = baseling + lingvoj[7]
+if option == "l":
+    study_today(week_day)
 
-should_study = "Vi devus studi la %s hodiaux!" % week_day
+if option == "b":
+    print base_langs
 
-if week_day == "1":
-    print lundo
-elif week_day == "2":
-    print mardo
-elif week_day == "3":
-    print merkredo
-elif week_day == "4":
-    print jauxdo
-elif week_day == "5":
-    print vendredo
+if option == "s":
+    print side_langs
 
+if option == "a":
+    for l in langs:
+        print l
