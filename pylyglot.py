@@ -5,27 +5,33 @@ from datetime import datetime, date, time
 now = date.today()
 week_day = now.strftime("%w")
 
-lingvoj = ['Dana, ', 'Franca, ', 'Japana, ', 'Sveda!', 'Germana!', 'Norvega!', 'Turka!', 'Itala!']
+languages = [
+    'Danish, ',
+    'French, ',
+    'Japanese, ',
+    'Swedish!',
+    'German!',
+    'Norwegian!',
+    'Turkish!',
+    'Italian!']
 
-baseling = lingvoj[0] + lingvoj[1] + lingvoj[2]
-apudling = lingvoj[3] + lingvoj[4] + lingvoj[5] + lingvoj[6] + lingvoj[7]
+base_language = languages[0] + languages[1] + languages[2]
 
-lundo = baseling + lingvoj[3]
-mardo = baseling + lingvoj[4]
-merkredo = baseling + lingvoj[5]
-jauxdo = baseling + lingvoj[6]
-vendredo = baseling + lingvoj[7]
+monday = base_language + languages[3]
+tuesday = base_language + languages[4]
+wendnesday = base_language + languages[5]
+thursday = base_language + languages[6]
+friday = base_language + languages[7]
 
 should_study = "Vi devus studi la %s hodiaux!" % week_day
 
 if week_day == "1":
-    print lundo
+    print(monday)
 elif week_day == "2":
-    print mardo
+    print(tuesday)
 elif week_day == "3":
-    print merkredo
+    print(wendnesday)
 elif week_day == "4":
-    print jauxdo
+    print(thursday)
 elif week_day == "5":
-    print vendredo
-
+    print(friday)
