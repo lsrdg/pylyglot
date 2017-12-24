@@ -1,6 +1,6 @@
 
 # -*- coding: utf-8 -*-
-from datetime import datetime, date, time
+from datetime import date
 
 now = date.today()
 week_day = now.strftime("%w")
